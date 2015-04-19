@@ -1,0 +1,419 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		752236221AE41FB8002526C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752236211AE41FB8002526C9 /* AppDelegate.swift */; };
+		752236241AE41FB8002526C9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 752236231AE41FB8002526C9 /* Images.xcassets */; };
+		752236271AE41FB8002526C9 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 752236251AE41FB8002526C9 /* MainMenu.xib */; };
+		752236331AE41FB9002526C9 /* RadioTowerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752236321AE41FB9002526C9 /* RadioTowerTests.swift */; };
+		752236441AE432B8002526C9 /* AboutWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752236421AE432B8002526C9 /* AboutWindow.swift */; };
+		752236451AE432B8002526C9 /* AboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 752236431AE432B8002526C9 /* AboutWindow.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7522362D1AE41FB9002526C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 752236141AE41FB8002526C9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7522361B1AE41FB8002526C9;
+			remoteInfo = RadioTower;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7522361C1AE41FB8002526C9 /* RadioTower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RadioTower.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		752236201AE41FB8002526C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		752236211AE41FB8002526C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		752236231AE41FB8002526C9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		752236261AE41FB8002526C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		7522362C1AE41FB9002526C9 /* RadioTowerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RadioTowerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		752236311AE41FB9002526C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		752236321AE41FB9002526C9 /* RadioTowerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioTowerTests.swift; sourceTree = "<group>"; };
+		752236421AE432B8002526C9 /* AboutWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutWindow.swift; sourceTree = "<group>"; };
+		752236431AE432B8002526C9 /* AboutWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutWindow.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		752236191AE41FB8002526C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		752236291AE41FB9002526C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		752236131AE41FB8002526C9 = {
+			isa = PBXGroup;
+			children = (
+				7522361E1AE41FB8002526C9 /* RadioTower */,
+				7522362F1AE41FB9002526C9 /* RadioTowerTests */,
+				7522361D1AE41FB8002526C9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7522361D1AE41FB8002526C9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7522361C1AE41FB8002526C9 /* RadioTower.app */,
+				7522362C1AE41FB9002526C9 /* RadioTowerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7522361E1AE41FB8002526C9 /* RadioTower */ = {
+			isa = PBXGroup;
+			children = (
+				752236211AE41FB8002526C9 /* AppDelegate.swift */,
+				752236231AE41FB8002526C9 /* Images.xcassets */,
+				752236251AE41FB8002526C9 /* MainMenu.xib */,
+				752236421AE432B8002526C9 /* AboutWindow.swift */,
+				752236431AE432B8002526C9 /* AboutWindow.xib */,
+				7522361F1AE41FB8002526C9 /* Supporting Files */,
+			);
+			path = RadioTower;
+			sourceTree = "<group>";
+		};
+		7522361F1AE41FB8002526C9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				752236201AE41FB8002526C9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7522362F1AE41FB9002526C9 /* RadioTowerTests */ = {
+			isa = PBXGroup;
+			children = (
+				752236321AE41FB9002526C9 /* RadioTowerTests.swift */,
+				752236301AE41FB9002526C9 /* Supporting Files */,
+			);
+			path = RadioTowerTests;
+			sourceTree = "<group>";
+		};
+		752236301AE41FB9002526C9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				752236311AE41FB9002526C9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7522361B1AE41FB8002526C9 /* RadioTower */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 752236361AE41FB9002526C9 /* Build configuration list for PBXNativeTarget "RadioTower" */;
+			buildPhases = (
+				752236181AE41FB8002526C9 /* Sources */,
+				752236191AE41FB8002526C9 /* Frameworks */,
+				7522361A1AE41FB8002526C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RadioTower;
+			productName = RadioTower;
+			productReference = 7522361C1AE41FB8002526C9 /* RadioTower.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7522362B1AE41FB9002526C9 /* RadioTowerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 752236391AE41FB9002526C9 /* Build configuration list for PBXNativeTarget "RadioTowerTests" */;
+			buildPhases = (
+				752236281AE41FB9002526C9 /* Sources */,
+				752236291AE41FB9002526C9 /* Frameworks */,
+				7522362A1AE41FB9002526C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7522362E1AE41FB9002526C9 /* PBXTargetDependency */,
+			);
+			name = RadioTowerTests;
+			productName = RadioTowerTests;
+			productReference = 7522362C1AE41FB9002526C9 /* RadioTowerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		752236141AE41FB8002526C9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Alexander Bykov";
+				TargetAttributes = {
+					7522361B1AE41FB8002526C9 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					7522362B1AE41FB9002526C9 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 7522361B1AE41FB8002526C9;
+					};
+				};
+			};
+			buildConfigurationList = 752236171AE41FB8002526C9 /* Build configuration list for PBXProject "RadioTower" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 752236131AE41FB8002526C9;
+			productRefGroup = 7522361D1AE41FB8002526C9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7522361B1AE41FB8002526C9 /* RadioTower */,
+				7522362B1AE41FB9002526C9 /* RadioTowerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7522361A1AE41FB8002526C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				752236241AE41FB8002526C9 /* Images.xcassets in Resources */,
+				752236271AE41FB8002526C9 /* MainMenu.xib in Resources */,
+				752236451AE432B8002526C9 /* AboutWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7522362A1AE41FB9002526C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		752236181AE41FB8002526C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				752236221AE41FB8002526C9 /* AppDelegate.swift in Sources */,
+				752236441AE432B8002526C9 /* AboutWindow.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		752236281AE41FB9002526C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				752236331AE41FB9002526C9 /* RadioTowerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7522362E1AE41FB9002526C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7522361B1AE41FB8002526C9 /* RadioTower */;
+			targetProxy = 7522362D1AE41FB9002526C9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		752236251AE41FB8002526C9 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				752236261AE41FB8002526C9 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		752236341AE41FB9002526C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		752236351AE41FB9002526C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		752236371AE41FB9002526C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = RadioTower/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		752236381AE41FB9002526C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = RadioTower/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		7522363A1AE41FB9002526C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RadioTowerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RadioTower.app/Contents/MacOS/RadioTower";
+			};
+			name = Debug;
+		};
+		7522363B1AE41FB9002526C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RadioTowerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RadioTower.app/Contents/MacOS/RadioTower";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		752236171AE41FB8002526C9 /* Build configuration list for PBXProject "RadioTower" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				752236341AE41FB9002526C9 /* Debug */,
+				752236351AE41FB9002526C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		752236361AE41FB9002526C9 /* Build configuration list for PBXNativeTarget "RadioTower" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				752236371AE41FB9002526C9 /* Debug */,
+				752236381AE41FB9002526C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		752236391AE41FB9002526C9 /* Build configuration list for PBXNativeTarget "RadioTowerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7522363A1AE41FB9002526C9 /* Debug */,
+				7522363B1AE41FB9002526C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 752236141AE41FB8002526C9 /* Project object */;
+}

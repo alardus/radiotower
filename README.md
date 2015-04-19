@@ -1,4 +1,4 @@
 radiotower
 ==========
 
-Chrome extension for listening radio through Portaller.com
+Mac OS X App for listening radio through Portaller.com
