@@ -122,6 +122,7 @@
 				752236181AE41FB8002526C9 /* Sources */,
 				752236191AE41FB8002526C9 /* Frameworks */,
 				7522361A1AE41FB8002526C9 /* Resources */,
+				759FEB051AE5A6D100E69FFE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -206,6 +207,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		759FEB051AE5A6D100E69FFE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PROJECT_DIR}/tools/bump_build_number.sh \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		752236181AE41FB8002526C9 /* Sources */ = {
@@ -404,6 +421,7 @@
 				752236381AE41FB9002526C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		752236391AE41FB9002526C9 /* Build configuration list for PBXNativeTarget "RadioTowerTests" */ = {
 			isa = XCConfigurationList;
@@ -412,6 +430,7 @@
 				7522363B1AE41FB9002526C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
