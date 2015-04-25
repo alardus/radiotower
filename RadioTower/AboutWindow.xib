@@ -35,7 +35,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="09B-mb-kLc">
-                        <rect key="frame" x="76" y="45" width="177" height="17"/>
+                        <rect key="frame" x="103" y="45" width="150" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="RadioTower, v0.1" id="29y-ml-K9N">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>

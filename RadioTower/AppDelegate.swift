@@ -23,9 +23,65 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         iconOn!.setTemplate(true)
         iconOff!.setTemplate(true)
         
-        statusItem.image = iconOff
+        // Run any command and prepare output
+        func runCommand(cmd : String, args : String...) -> (output: [String], error: [String], exitCode: Int32) {
+            
+            var output : [String] = []
+            var error : [String] = []
+            
+            let task = NSTask()
+            task.launchPath = cmd
+            task.arguments = args
+            
+            let outpipe = NSPipe()
+            task.standardOutput = outpipe
+            let errpipe = NSPipe()
+            task.standardError = errpipe
+            
+            task.launch()
+            
+            let outdata = outpipe.fileHandleForReading.readDataToEndOfFile()
+            if var string = String.fromCString(UnsafePointer(outdata.bytes)) {
+                string = string.stringByTrimmingCharactersInSet(NSCharacterSet.newlineCharacterSet())
+                output = string.componentsSeparatedByString("\n")
+            }
+            
+            let errdata = errpipe.fileHandleForReading.readDataToEndOfFile()
+            if var string = String.fromCString(UnsafePointer(errdata.bytes)) {
+                string = string.stringByTrimmingCharactersInSet(NSCharacterSet.newlineCharacterSet())
+                error = string.componentsSeparatedByString("\n")
+            }
+            
+            task.waitUntilExit()
+            let status = task.terminationStatus
+            
+            return (output, error, status)
+        }
+        
+        // Geting output
+        let outputWf = runCommand("/usr/sbin/networksetup", "-getdnsservers", "Wi-Fi").output
+        let outputEth = runCommand("/usr/sbin/networksetup", "-getdnsservers", "USB Ethernet").output
+        
+        // Set right settings
+        let rightSettings = ["107.170.15.247", "77.88.8.8"]
+        
+        
+        // Compare current / right and set up icon
+        if outputWf == rightSettings {
+            let statusWf = "on"
+            statusItem.image = iconOn
+        }
+        else if outputEth == rightSettings {
+            let statusEth = "on"
+            statusItem.image = iconOn
+        } else {
+            statusItem.image = iconOff
+        }
+        
+        
         statusItem.menu = statusMenu
     }
+    
 
     override func awakeFromNib() {
         aboutWindow = AboutWindow()

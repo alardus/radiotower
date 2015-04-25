@@ -23,7 +23,7 @@ class AboutWindow: NSWindowController {
         let version = NSBundle.mainBundle().infoDictionary?["CFBundleShortVersionString"] as? String
         let build = NSBundle.mainBundle().infoDictionary?["CFBundleVersion"] as? String
         let name = NSBundle.mainBundle().infoDictionary?["CFBundleName"] as? String
-        aboutVersion.stringValue = name! + ", v" + version! + " build " + build!
+        aboutVersion.stringValue = name! + " " + version! + " (" + build! + ")"
     }
 
     @IBOutlet weak var about: NSWindow!
