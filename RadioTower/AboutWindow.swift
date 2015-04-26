@@ -22,8 +22,8 @@ class AboutWindow: NSWindowController {
     override func awakeFromNib() {
         let version = NSBundle.mainBundle().infoDictionary?["CFBundleShortVersionString"] as? String
         let build = NSBundle.mainBundle().infoDictionary?["CFBundleVersion"] as? String
-        let name = NSBundle.mainBundle().infoDictionary?["CFBundleName"] as? String
-        aboutVersion.stringValue = name! + " " + version! + " (" + build! + ")"
+//        let name = NSBundle.mainBundle().infoDictionary?["CFBundleName"] as? String
+        aboutVersion.stringValue = "Version " + version! + " (" + build! + ")"
     }
 
     @IBOutlet weak var about: NSWindow!

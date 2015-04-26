@@ -15,15 +15,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var statusMenu: NSMenu!
     var aboutWindow: AboutWindow!
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-1)
-
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
+        statusItem.menu = statusMenu
+    }
+    
+    override func awakeFromNib() {
+        
+        // Set icons and enable support for dark theme
         let iconOn = NSImage(named: "statusIcon")
         let iconOff = NSImage(named: "statusIconOff")
         iconOn!.setTemplate(true)
         iconOff!.setTemplate(true)
         
-        // Run any command and prepare output
+        
+        // Run NSTask and read output
         func runCommand(cmd : String, args : String...) -> (output: [String], error: [String], exitCode: Int32) {
             
             var output : [String] = []
@@ -58,35 +64,45 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             return (output, error, status)
         }
         
-        // Geting output
+        
+        // Read output for Wi-Fi and Ethernet adapters
         let outputWf = runCommand("/usr/sbin/networksetup", "-getdnsservers", "Wi-Fi").output
         let outputEth = runCommand("/usr/sbin/networksetup", "-getdnsservers", "USB Ethernet").output
         
-        // Set right settings
+        
+        // Define "right" settings
         let rightSettings = ["107.170.15.247", "77.88.8.8"]
         
         
-        // Compare current / right and set up icon
+        // Compare current settings to "right" and set menu items
         if outputWf == rightSettings {
-            let statusWf = "on"
-            statusItem.image = iconOn
+            wfItem.state = NSOnState
         }
-        else if outputEth == rightSettings {
-            let statusEth = "on"
+            
+        if outputEth == rightSettings {
+            ethItem.state = NSOnState
+        }
+        
+        
+        // Set proper icon in menubar
+        if outputWf == rightSettings {
+            statusItem.image = iconOn
+        } else if outputEth == rightSettings {
             statusItem.image = iconOn
         } else {
             statusItem.image = iconOff
         }
         
-        
-        statusItem.menu = statusMenu
-    }
-    
-
-    override func awakeFromNib() {
         aboutWindow = AboutWindow()
     }
     
+    
+    // Outlets for menubar items
+    @IBOutlet weak var wfItem: NSMenuItem!
+    @IBOutlet weak var ethItem: NSMenuItem!
+    
+    
+    // Actions with menubar items
     @IBAction func menuEth(sender: NSMenuItem) {
         let eth = NSTask()
         eth.launchPath = "/usr/sbin/networksetup"
@@ -124,6 +140,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             wf.arguments = ["-setdnsservers", "Wi-Fi", "107.170.15.247", "77.88.8.8"]
             let iconOn = NSImage(named: "statusIcon")
             statusItem.image = iconOn
+            
         }
         
         wf.launch()
