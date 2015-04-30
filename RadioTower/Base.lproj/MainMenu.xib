@@ -21,18 +21,38 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu id="zkD-na-VMR">
             <items>
-                <menuItem title="Use on Ethernet" id="XZR-wn-CcL">
+                <menuItem title="Listen to Pandora" keyEquivalent="P" id="z84-fe-ji3">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="loadPandora:" target="Voe-Tx-rLC" id="aKf-2R-vfp"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Listen to Spotify" keyEquivalent="S" id="C86-xb-RBD">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="loadSpotify:" target="Voe-Tx-rLC" id="cJx-Ex-zJE"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Watch Netflix" keyEquivalent="N" id="OXB-jH-yPb">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="loadNetflix:" target="Voe-Tx-rLC" id="bqW-qp-9fu"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="rBC-jn-vG6"/>
+                <menuItem title="Set up Portaller for Ethernet" id="XZR-wn-CcL">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="menuEth:" target="Voe-Tx-rLC" id="LEY-Ta-L1T"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Use on WiFi" id="rZP-rJ-cXl">
+                <menuItem title="Set up Portaller for Wi-Fi" id="rZP-rJ-cXl">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="menuWf:" target="Voe-Tx-rLC" id="2Kv-xj-rEn"/>
                     </connections>
                 </menuItem>
+                <menuItem isSeparatorItem="YES" id="dqc-4I-PaE"/>
                 <menuItem title="About..." id="d6g-xB-6lk">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>

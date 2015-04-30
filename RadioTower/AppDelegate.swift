@@ -98,6 +98,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     
     // Outlets for menubar items
+    @IBAction func loadPandora(sender: NSMenuItem) {
+        NSWorkspace.sharedWorkspace().openURL(NSURL(string: "http://www.pandora.com")!)
+    }
+    
+    @IBAction func loadSpotify(sender: NSMenuItem) {
+        NSWorkspace.sharedWorkspace().openURL(NSURL(string: "http://www.spotify.com")!)
+    }
+    
+    @IBAction func loadNetflix(sender: NSMenuItem) {
+        NSWorkspace.sharedWorkspace().openURL(NSURL(string: "http://www.netflix.com")!)
+    }
     @IBOutlet weak var wfItem: NSMenuItem!
     @IBOutlet weak var ethItem: NSMenuItem!
     
