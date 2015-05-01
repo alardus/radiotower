@@ -13,7 +13,9 @@
 		752236331AE41FB9002526C9 /* RadioTowerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752236321AE41FB9002526C9 /* RadioTowerTests.swift */; };
 		752236441AE432B8002526C9 /* AboutWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752236421AE432B8002526C9 /* AboutWindow.swift */; };
 		752236451AE432B8002526C9 /* AboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 752236431AE432B8002526C9 /* AboutWindow.xib */; };
-		752C89521AF2CC9C00930F21 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 752C89501AF2CC9400930F21 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		754A159C1AF38FCA00D360B7 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754A159B1AF38FCA00D360B7 /* Sparkle.framework */; };
+		754A159E1AF38FDC00D360B7 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 754A159B1AF38FCA00D360B7 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		754A15A21AF3AE7200D360B7 /* radiotower.pem in Resources */ = {isa = PBXBuildFile; fileRef = 754A15A11AF3AE7200D360B7 /* radiotower.pem */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,13 +29,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		752C894F1AF2CC7700930F21 /* CopyFiles */ = {
+		754A159D1AF38FD600D360B7 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				752C89521AF2CC9C00930F21 /* Sparkle.framework in CopyFiles */,
+				754A159E1AF38FDC00D360B7 /* Sparkle.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,7 +52,8 @@
 		752236321AE41FB9002526C9 /* RadioTowerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioTowerTests.swift; sourceTree = "<group>"; };
 		752236421AE432B8002526C9 /* AboutWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutWindow.swift; sourceTree = "<group>"; };
 		752236431AE432B8002526C9 /* AboutWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutWindow.xib; sourceTree = "<group>"; };
-		752C89501AF2CC9400930F21 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Frameworks/Sparkle.framework; sourceTree = "<group>"; };
+		754A159B1AF38FCA00D360B7 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Frameworks/Sparkle.framework; sourceTree = "<group>"; };
+		754A15A11AF3AE7200D360B7 /* radiotower.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = radiotower.pem; path = Resources/radiotower.pem; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				754A159C1AF38FCA00D360B7 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,7 +78,8 @@
 		752236131AE41FB8002526C9 = {
 			isa = PBXGroup;
 			children = (
-				752C89501AF2CC9400930F21 /* Sparkle.framework */,
+				754A15A11AF3AE7200D360B7 /* radiotower.pem */,
+				754A159B1AF38FCA00D360B7 /* Sparkle.framework */,
 				7522361E1AE41FB8002526C9 /* RadioTower */,
 				7522362F1AE41FB9002526C9 /* RadioTowerTests */,
 				7522361D1AE41FB8002526C9 /* Products */,
@@ -139,7 +144,7 @@
 				752236191AE41FB8002526C9 /* Frameworks */,
 				7522361A1AE41FB8002526C9 /* Resources */,
 				759FEB051AE5A6D100E69FFE /* ShellScript */,
-				752C894F1AF2CC7700930F21 /* CopyFiles */,
+				754A159D1AF38FD600D360B7 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -212,6 +217,7 @@
 			files = (
 				752236241AE41FB8002526C9 /* Images.xcassets in Resources */,
 				752236271AE41FB8002526C9 /* MainMenu.xib in Resources */,
+				754A15A21AF3AE7200D360B7 /* radiotower.pem in Resources */,
 				752236451AE432B8002526C9 /* AboutWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

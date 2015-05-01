@@ -111,7 +111,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     @IBOutlet weak var wfItem: NSMenuItem!
     @IBOutlet weak var ethItem: NSMenuItem!
-    
+
     
     // Actions with menubar items
     @IBAction func menuEth(sender: NSMenuItem) {

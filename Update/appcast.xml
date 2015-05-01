@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>RadioTower Changelog</title>
+        <link>http://portaller.com/static/appcast.xml</link>
+        <description>Most recent changes with links to updates.</description>
+        <language>en</language>
+
+        <item>
+            <title>Version 0.3</title>
+            <sparkle:releaseNotesLink>
+                http://portaller.com/app/0.3.html
+            </sparkle:releaseNotesLink>
+            <pubDate>Wed, 01 May 2015 12:00:00 +4000</pubDate>
+            <enclosure url="http://portaller.com/app/RadioTower.zip" 
+                       sparkle:version="70" 
+                       sparkle:shortVersionString="0.3" 
+                       length="2239837" 
+                       type="application/octet-stream" 
+                       sparkle:dsaSignature="MCwCFDP6av5qPSStMlN41Fj5/jaSLVNRAhQdc6+KbS0+xLBe9NwNgjTqOmicAg==" />
+        </item>
+
+    </channel>
+</rss>

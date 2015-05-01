@@ -53,6 +53,12 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="dqc-4I-PaE"/>
+                <menuItem title="Check for Updates..." id="KMq-PV-F3X">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="checkForUpdates:" target="Y98-Wt-U4y" id="rzm-tN-SPD"/>
+                    </connections>
+                </menuItem>
                 <menuItem title="About..." id="d6g-xB-6lk">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
@@ -68,6 +74,6 @@
             </items>
             <point key="canvasLocation" x="-129.5" y="-16.5"/>
         </menu>
-        <customObject id="GRy-6C-xc3" customClass="SUUpdater"/>
+        <customObject id="Y98-Wt-U4y" customClass="SUUpdater"/>
     </objects>
 </document>
