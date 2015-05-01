@@ -68,5 +68,6 @@
             </items>
             <point key="canvasLocation" x="-129.5" y="-16.5"/>
         </menu>
+        <customObject id="GRy-6C-xc3" customClass="SUUpdater"/>
     </objects>
 </document>
