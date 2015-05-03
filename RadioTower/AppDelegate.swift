@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import Foundation
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -15,10 +16,88 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var statusMenu: NSMenu!
     var aboutWindow: AboutWindow!
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-1)
+    let defaults = NSUserDefaults.standardUserDefaults()
+    
+    // If stat was sent at previous day - send it again
+    func checkStatReport() {
+        // Set current date
+        let date = NSDate()
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        let currentDate = dateFormatter.stringFromDate(date)
+        
+        
+        // Set Google Analytics URL
+        let uuid = defaults.stringForKey("userID") as String!
+        let build = NSBundle.mainBundle().infoDictionary?["CFBundleVersion"] as! String
+        let analyticsURL = "uid="+uuid+"&an=RadioTower3&av="+build
+        
+        // Send statistic
+        if defaults.stringForKey("lastReport") != nil {
+            if defaults.stringForKey("lastReport") == currentDate {
+                // reported already, do nothing
+            } else {
+                // Sending report
+                let uuid = defaults.stringForKey("userID") as String!
+                let sendStat = NSTask()
+                sendStat.launchPath = "/usr/bin/curl"
+                sendStat.arguments = ["-G", "http://portaller.com/app/collect", "-d", analyticsURL]
+                sendStat.launch()
+                sendStat.waitUntilExit()
+                
+                
+                // Touch last report date
+                defaults.setObject(currentDate, forKey: "lastReport")
+            }
+        } else {
+            // Sending report
+            let uuid = defaults.stringForKey("userID") as String!
+            let sendStat = NSTask()
+            sendStat.launchPath = "/usr/bin/curl"
+            sendStat.arguments = ["-G", "http://portaller.com/app/collect", "-d", analyticsURL]
+            sendStat.launch()
+            sendStat.waitUntilExit()
+            
+            // Touch last report date
+            defaults.setObject(currentDate, forKey: "lastReport")
+        }
+    }
+    
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         statusItem.menu = statusMenu
+        
+        
+        // FOR DEBUG, MUST BE COMMENTED
+        //defaults.setObject("28-04-2015", forKey: "lastReport")
+        
+        
+        // Set UUID
+        if defaults.stringForKey("userID") != nil {
+            // do nothing
+        } else {
+            let uuid = NSUUID().UUIDString
+            defaults.setObject(uuid, forKey: "userID")
+        }
+        
+        
+        // Special delay func
+        func delay(delay:Double, closure:()->()) {
+            dispatch_after(
+                dispatch_time(
+                    DISPATCH_TIME_NOW,
+                    Int64(delay * Double(NSEC_PER_SEC))
+                ),
+                dispatch_get_main_queue(), closure)
+        }
+        
+        
+        // Call checkStatReport and set sleep timer for 12 hours (43200sec)
+        checkStatReport()
+        NSTimer.scheduledTimerWithTimeInterval(43200, target: self, selector: Selector("checkStatReport"), userInfo: nil, repeats: true)
+    
     }
+    
     
     override func awakeFromNib() {
         
