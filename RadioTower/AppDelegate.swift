@@ -19,49 +19,49 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let defaults = NSUserDefaults.standardUserDefaults()
     
     // If stat was sent at previous day - send it again
-    func checkStatReport() {
-        // Set current date
-        let date = NSDate()
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
-        let currentDate = dateFormatter.stringFromDate(date)
-        
-        
-        // Set Google Analytics URL
-        let uuid = defaults.stringForKey("userID") as String!
-        let build = NSBundle.mainBundle().infoDictionary?["CFBundleVersion"] as! String
-        let analyticsURL = "uid="+uuid+"&an=RadioTower3&av="+build
-        
-        // Send statistic
-        if defaults.stringForKey("lastReport") != nil {
-            if defaults.stringForKey("lastReport") == currentDate {
-                // reported already, do nothing
-            } else {
-                // Sending report
-                let uuid = defaults.stringForKey("userID") as String!
-                let sendStat = NSTask()
-                sendStat.launchPath = "/usr/bin/curl"
-                sendStat.arguments = ["-G", "http://portaller.com/app/collect", "-d", analyticsURL]
-                sendStat.launch()
-                sendStat.waitUntilExit()
-                
-                
-                // Touch last report date
-                defaults.setObject(currentDate, forKey: "lastReport")
-            }
-        } else {
-            // Sending report
-            let uuid = defaults.stringForKey("userID") as String!
-            let sendStat = NSTask()
-            sendStat.launchPath = "/usr/bin/curl"
-            sendStat.arguments = ["-G", "http://portaller.com/app/collect", "-d", analyticsURL]
-            sendStat.launch()
-            sendStat.waitUntilExit()
-            
-            // Touch last report date
-            defaults.setObject(currentDate, forKey: "lastReport")
-        }
-    }
+//    func checkStatReport() {
+//        // Set current date
+//        let date = NSDate()
+//        let dateFormatter = NSDateFormatter()
+//        dateFormatter.dateFormat = "dd-MM-yyyy"
+//        let currentDate = dateFormatter.stringFromDate(date)
+//        
+//        
+//        // Set Google Analytics URL
+//        let uuid = defaults.stringForKey("userID") as String!
+//        let build = NSBundle.mainBundle().infoDictionary?["CFBundleVersion"] as! String
+//        let analyticsURL = "uid="+uuid+"&an=RadioTower3&av="+build
+//        
+//        // Send statistic
+//        if defaults.stringForKey("lastReport") != nil {
+//            if defaults.stringForKey("lastReport") == currentDate {
+//                // reported already, do nothing
+//            } else {
+//                // Sending report
+//                let uuid = defaults.stringForKey("userID") as String!
+//                let sendStat = NSTask()
+//                sendStat.launchPath = "/usr/bin/curl"
+//                sendStat.arguments = ["-G", "http://portaller.com/app/collect", "-d", analyticsURL]
+//                sendStat.launch()
+//                sendStat.waitUntilExit()
+//                
+//                
+//                // Touch last report date
+//                defaults.setObject(currentDate, forKey: "lastReport")
+//            }
+//        } else {
+//            // Sending report
+//            let uuid = defaults.stringForKey("userID") as String!
+//            let sendStat = NSTask()
+//            sendStat.launchPath = "/usr/bin/curl"
+//            sendStat.arguments = ["-G", "http://portaller.com/app/collect", "-d", analyticsURL]
+//            sendStat.launch()
+//            sendStat.waitUntilExit()
+//            
+//            // Touch last report date
+//            defaults.setObject(currentDate, forKey: "lastReport")
+//        }
+//    }
     
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
@@ -93,8 +93,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         
         // Call checkStatReport and set sleep timer for 12 hours (43200sec)
-        checkStatReport()
-        NSTimer.scheduledTimerWithTimeInterval(43200, target: self, selector: Selector("checkStatReport"), userInfo: nil, repeats: true)
+//        checkStatReport()
+//        NSTimer.scheduledTimerWithTimeInterval(43200, target: self, selector: Selector("checkStatReport"), userInfo: nil, repeats: true)
     
     }
     
@@ -104,8 +104,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Set icons and enable support for dark theme
         let iconOn = NSImage(named: "statusIcon")
         let iconOff = NSImage(named: "statusIconOff")
-        iconOn!.setTemplate(true)
-        iconOff!.setTemplate(true)
+        iconOn!.template = true
+        iconOff!.template = true
         
         
         // Run NSTask and read output
@@ -145,8 +145,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         
         // Read output for Wi-Fi and Ethernet adapters
-        let outputWf = runCommand("/usr/sbin/networksetup", "-getdnsservers", "Wi-Fi").output
-        let outputEth = runCommand("/usr/sbin/networksetup", "-getdnsservers", "USB Ethernet").output
+        let outputWf = runCommand("/usr/sbin/networksetup", args: "-getdnsservers", "Wi-Fi").output
+        let outputEth = runCommand("/usr/sbin/networksetup", args: "-getdnsservers", "USB Ethernet").output
         
         
         // Define "right" settings
