@@ -14,21 +14,21 @@ class AboutWindow: NSWindowController {
         super.windowDidLoad()
         self.window?.center()
         self.window?.makeKeyAndOrderFront(nil)
-        NSApp.activateIgnoringOtherApps(true)
+        NSApp.activate(ignoringOtherApps: true)
 
         // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
     }
     
     override func awakeFromNib() {
-        let version = NSBundle.mainBundle().infoDictionary?["CFBundleShortVersionString"] as? String
-        let build = NSBundle.mainBundle().infoDictionary?["CFBundleVersion"] as? String
+        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String
 //        let name = NSBundle.mainBundle().infoDictionary?["CFBundleName"] as? String
         aboutVersion.stringValue = "Version " + version! + " (" + build! + ")"
     }
 
     @IBOutlet weak var about: NSWindow!
-    override var windowNibName : String! {
-        return "AboutWindow"
+    override var windowNibName : NSNib.Name? {
+        return NSNib.Name(rawValue: "AboutWindow")
     }
     
     @IBOutlet weak var aboutVersion: NSTextField!

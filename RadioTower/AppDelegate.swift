@@ -15,8 +15,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var statusMenu: NSMenu!
     var aboutWindow: AboutWindow!
-    let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-1)
-    let defaults = NSUserDefaults.standardUserDefaults()
+    let statusItem = NSStatusBar.system.statusItem(withLength: -1)
+    let defaults = UserDefaults.standard
     
     // If stat was sent at previous day - send it again
 //    func checkStatReport() {
@@ -64,7 +64,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 //    }
     
     
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
         statusItem.menu = statusMenu
         
         
@@ -73,22 +73,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         
         // Set UUID
-        if defaults.stringForKey("userID") != nil {
+        if defaults.string(forKey: "userID") != nil {
             // do nothing
         } else {
-            let uuid = NSUUID().UUIDString
-            defaults.setObject(uuid, forKey: "userID")
+            let uuid = UUID().uuidString
+            defaults.set(uuid, forKey: "userID")
         }
         
         
         // Special delay func
-        func delay(delay:Double, closure:()->()) {
-            dispatch_after(
-                dispatch_time(
-                    DISPATCH_TIME_NOW,
-                    Int64(delay * Double(NSEC_PER_SEC))
-                ),
-                dispatch_get_main_queue(), closure)
+        func delay(_ delay:Double, closure:@escaping ()->()) {
+            DispatchQueue.main.asyncAfter(
+                deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: closure)
         }
         
         
@@ -102,40 +98,40 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     override func awakeFromNib() {
         
         // Set icons and enable support for dark theme
-        let iconOn = NSImage(named: "statusIcon")
-        let iconOff = NSImage(named: "statusIconOff")
-        iconOn!.template = true
-        iconOff!.template = true
+        let iconOn = NSImage(named: NSImage.Name(rawValue: "statusIcon"))
+        let iconOff = NSImage(named: NSImage.Name(rawValue: "statusIconOff"))
+        iconOn!.isTemplate = true
+        iconOff!.isTemplate = true
         
         
         // Run NSTask and read output
-        func runCommand(cmd : String, args : String...) -> (output: [String], error: [String], exitCode: Int32) {
+        func runCommand(_ cmd : String, args : String...) -> (output: [String], error: [String], exitCode: Int32) {
             
-            var output : [String] = []
-            var error : [String] = []
+            let output : [String] = []
+            let error : [String] = []
             
-            let task = NSTask()
+            let task = Process()
             task.launchPath = cmd
             task.arguments = args
             
-            let outpipe = NSPipe()
+            let outpipe = Pipe()
             task.standardOutput = outpipe
-            let errpipe = NSPipe()
+            let errpipe = Pipe()
             task.standardError = errpipe
             
             task.launch()
             
-            let outdata = outpipe.fileHandleForReading.readDataToEndOfFile()
-            if var string = String.fromCString(UnsafePointer(outdata.bytes)) {
-                string = string.stringByTrimmingCharactersInSet(NSCharacterSet.newlineCharacterSet())
-                output = string.componentsSeparatedByString("\n")
-            }
-            
-            let errdata = errpipe.fileHandleForReading.readDataToEndOfFile()
-            if var string = String.fromCString(UnsafePointer(errdata.bytes)) {
-                string = string.stringByTrimmingCharactersInSet(NSCharacterSet.newlineCharacterSet())
-                error = string.componentsSeparatedByString("\n")
-            }
+//            let outdata = outpipe.fileHandleForReading.readDataToEndOfFile()
+//            if var string = String(validatingUTF8: UnsafePointer((outdata as NSData).bytes)) {
+//                string = string.trimmingCharacters(in: CharacterSet.newlines)
+//                output = string.components(separatedBy: "\n")
+//            }
+//            
+//            let errdata = errpipe.fileHandleForReading.readDataToEndOfFile()
+//            if var string = String(validatingUTF8: UnsafePointer((errdata as NSData).bytes)) {
+//                string = string.trimmingCharacters(in: CharacterSet.newlines)
+//                error = string.components(separatedBy: "\n")
+//            }
             
             task.waitUntilExit()
             let status = task.terminationStatus
@@ -155,11 +151,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         // Compare current settings to "right" and set menu items
         if outputWf == rightSettings {
-            wfItem.state = NSOnState
+            wfItem.state = NSControl.StateValue.on
         }
             
         if outputEth == rightSettings {
-            ethItem.state = NSOnState
+            ethItem.state = NSControl.StateValue.on
         }
         
         
@@ -177,36 +173,36 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     
     // Outlets for menubar items
-    @IBAction func loadPandora(sender: NSMenuItem) {
-        NSWorkspace.sharedWorkspace().openURL(NSURL(string: "http://www.pandora.com")!)
+    @IBAction func loadPandora(_ sender: NSMenuItem) {
+        NSWorkspace.shared.open(URL(string: "http://www.pandora.com")!)
     }
     
-    @IBAction func loadSpotify(sender: NSMenuItem) {
-        NSWorkspace.sharedWorkspace().openURL(NSURL(string: "http://www.spotify.com")!)
+    @IBAction func loadSpotify(_ sender: NSMenuItem) {
+        NSWorkspace.shared.open(URL(string: "http://www.spotify.com")!)
     }
     
-    @IBAction func loadNetflix(sender: NSMenuItem) {
-        NSWorkspace.sharedWorkspace().openURL(NSURL(string: "http://www.netflix.com")!)
+    @IBAction func loadNetflix(_ sender: NSMenuItem) {
+        NSWorkspace.shared.open(URL(string: "http://www.netflix.com")!)
     }
     @IBOutlet weak var wfItem: NSMenuItem!
     @IBOutlet weak var ethItem: NSMenuItem!
 
     
     // Actions with menubar items
-    @IBAction func menuEth(sender: NSMenuItem) {
-        let eth = NSTask()
+    @IBAction func menuEth(_ sender: NSMenuItem) {
+        let eth = Process()
         eth.launchPath = "/usr/sbin/networksetup"
         
-        if(sender.state == NSOnState) {
-            sender.state = NSOffState
+        if(sender.state == NSControl.StateValue.on) {
+            sender.state = NSControl.StateValue.off
             eth.arguments = ["-setdnsservers", "USB Ethernet", "Empty"]
-            let iconOff = NSImage(named: "statusIconOff")
+            let iconOff = NSImage(named: NSImage.Name(rawValue: "statusIconOff"))
             statusItem.image = iconOff
         }
         else {
-            sender.state = NSOnState
+            sender.state = NSControl.StateValue.on
             eth.arguments = ["-setdnsservers", "USB Ethernet", "107.170.15.247", "77.88.8.8"]
-            let iconOn = NSImage(named: "statusIcon")
+            let iconOn = NSImage(named: NSImage.Name(rawValue: "statusIcon"))
             statusItem.image = iconOn
         }
         
@@ -215,20 +211,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     
-    @IBAction func menuWf(sender: NSMenuItem) {
-        let wf = NSTask()
+    @IBAction func menuWf(_ sender: NSMenuItem) {
+        let wf = Process()
         wf.launchPath = "/usr/sbin/networksetup"
         
-        if(sender.state == NSOnState) {
-            sender.state = NSOffState
+        if(sender.state == NSControl.StateValue.on) {
+            sender.state = NSControl.StateValue.off
             wf.arguments = ["-setdnsservers", "Wi-Fi", "Empty"]
-            let iconOff = NSImage(named: "statusIconOff")
+            let iconOff = NSImage(named: NSImage.Name(rawValue: "statusIconOff"))
             statusItem.image = iconOff
         }
         else {
-            sender.state = NSOnState
+            sender.state = NSControl.StateValue.on
             wf.arguments = ["-setdnsservers", "Wi-Fi", "107.170.15.247", "77.88.8.8"]
-            let iconOn = NSImage(named: "statusIcon")
+            let iconOn = NSImage(named: NSImage.Name(rawValue: "statusIcon"))
             statusItem.image = iconOn
             
         }
@@ -238,13 +234,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
 
-    @IBAction func menuAbout(sender: NSMenuItem) {
+    @IBAction func menuAbout(_ sender: NSMenuItem) {
         aboutWindow.showWindow(nil)
     }
     
     
-    @IBAction func menuExit(sender: NSMenuItem) {
-        NSApplication.sharedApplication().terminate(self)
+    @IBAction func menuExit(_ sender: NSMenuItem) {
+        NSApplication.shared.terminate(self)
     }
     
 }
