@@ -12,6 +12,13 @@
 		752236271AE41FB8002526C9 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 752236251AE41FB8002526C9 /* MainMenu.xib */; };
 		752236441AE432B8002526C9 /* AboutWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752236421AE432B8002526C9 /* AboutWindow.swift */; };
 		752236451AE432B8002526C9 /* AboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 752236431AE432B8002526C9 /* AboutWindow.xib */; };
+		7530BD432013AAEC00148DBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7530BD422013AAEC00148DBC /* AppDelegate.swift */; };
+		7530BD472013AAEC00148DBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7530BD462013AAEC00148DBC /* Assets.xcassets */; };
+		7530BD4A2013AAEC00148DBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7530BD482013AAEC00148DBC /* Main.storyboard */; };
+		7530BD552013AC9C00148DBC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7530BD542013AC9C00148DBC /* Cocoa.framework */; };
+		7530BD572013ACA800148DBC /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7530BD562013ACA800148DBC /* ServiceManagement.framework */; };
+		7530BD5A2013AF4C00148DBC /* LauncherApplication.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7530BD402013AAEC00148DBC /* LauncherApplication.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7530BD5B2013AF7D00148DBC /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7530BD562013ACA800148DBC /* ServiceManagement.framework */; };
 		754A159C1AF38FCA00D360B7 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754A159B1AF38FCA00D360B7 /* Sparkle.framework */; };
 		754A159E1AF38FDC00D360B7 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 754A159B1AF38FCA00D360B7 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		754A15A21AF3AE7200D360B7 /* radiotower.pem in Resources */ = {isa = PBXBuildFile; fileRef = 754A15A11AF3AE7200D360B7 /* radiotower.pem */; };
@@ -28,6 +35,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		7530BD592013AF3E00148DBC /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				7530BD5A2013AF4C00148DBC /* LauncherApplication.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		754A159D1AF38FD600D360B7 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -49,6 +66,15 @@
 		7522362C1AE41FB9002526C9 /* RadioTowerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RadioTowerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		752236421AE432B8002526C9 /* AboutWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutWindow.swift; sourceTree = "<group>"; };
 		752236431AE432B8002526C9 /* AboutWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutWindow.xib; sourceTree = "<group>"; };
+		7530BD402013AAEC00148DBC /* LauncherApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LauncherApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7530BD422013AAEC00148DBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7530BD462013AAEC00148DBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7530BD492013AAEC00148DBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7530BD4B2013AAEC00148DBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7530BD4C2013AAEC00148DBC /* LauncherApplication.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LauncherApplication.entitlements; sourceTree = "<group>"; };
+		7530BD502013AB3C00148DBC /* RadioTower.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RadioTower.entitlements; sourceTree = "<group>"; };
+		7530BD542013AC9C00148DBC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		7530BD562013ACA800148DBC /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		754A159B1AF38FCA00D360B7 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Frameworks/Sparkle.framework; sourceTree = "<group>"; };
 		754A15A11AF3AE7200D360B7 /* radiotower.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = radiotower.pem; path = Resources/radiotower.pem; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7530BD5B2013AF7D00148DBC /* ServiceManagement.framework in Frameworks */,
 				754A159C1AF38FCA00D360B7 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,6 +93,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7530BD3D2013AAEC00148DBC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7530BD572013ACA800148DBC /* ServiceManagement.framework in Frameworks */,
+				7530BD552013AC9C00148DBC /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +114,9 @@
 				754A15A11AF3AE7200D360B7 /* radiotower.pem */,
 				754A159B1AF38FCA00D360B7 /* Sparkle.framework */,
 				7522361E1AE41FB8002526C9 /* RadioTower */,
+				7530BD412013AAEC00148DBC /* LauncherApplication */,
 				7522361D1AE41FB8002526C9 /* Products */,
+				7530BD532013AC9B00148DBC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,6 +125,7 @@
 			children = (
 				7522361C1AE41FB8002526C9 /* RadioTower.app */,
 				7522362C1AE41FB9002526C9 /* RadioTowerTests.xctest */,
+				7530BD402013AAEC00148DBC /* LauncherApplication.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,6 +133,7 @@
 		7522361E1AE41FB8002526C9 /* RadioTower */ = {
 			isa = PBXGroup;
 			children = (
+				7530BD502013AB3C00148DBC /* RadioTower.entitlements */,
 				752236211AE41FB8002526C9 /* AppDelegate.swift */,
 				752236231AE41FB8002526C9 /* Images.xcassets */,
 				752236251AE41FB8002526C9 /* MainMenu.xib */,
@@ -112,6 +152,27 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		7530BD412013AAEC00148DBC /* LauncherApplication */ = {
+			isa = PBXGroup;
+			children = (
+				7530BD422013AAEC00148DBC /* AppDelegate.swift */,
+				7530BD462013AAEC00148DBC /* Assets.xcassets */,
+				7530BD482013AAEC00148DBC /* Main.storyboard */,
+				7530BD4B2013AAEC00148DBC /* Info.plist */,
+				7530BD4C2013AAEC00148DBC /* LauncherApplication.entitlements */,
+			);
+			path = LauncherApplication;
+			sourceTree = "<group>";
+		};
+		7530BD532013AC9B00148DBC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7530BD562013ACA800148DBC /* ServiceManagement.framework */,
+				7530BD542013AC9C00148DBC /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -124,6 +185,7 @@
 				7522361A1AE41FB8002526C9 /* Resources */,
 				759FEB051AE5A6D100E69FFE /* ShellScript */,
 				754A159D1AF38FD600D360B7 /* CopyFiles */,
+				7530BD592013AF3E00148DBC /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -152,6 +214,23 @@
 			productReference = 7522362C1AE41FB9002526C9 /* RadioTowerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		7530BD3F2013AAEC00148DBC /* LauncherApplication */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7530BD4F2013AAEC00148DBC /* Build configuration list for PBXNativeTarget "LauncherApplication" */;
+			buildPhases = (
+				7530BD3C2013AAEC00148DBC /* Sources */,
+				7530BD3D2013AAEC00148DBC /* Frameworks */,
+				7530BD3E2013AAEC00148DBC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LauncherApplication;
+			productName = LauncherApplication;
+			productReference = 7530BD402013AAEC00148DBC /* LauncherApplication.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -159,18 +238,27 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftMigration = 0720;
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Alexander Bykov";
 				TargetAttributes = {
 					7522361B1AE41FB8002526C9 = {
 						CreatedOnToolsVersion = 6.4;
 						LastSwiftMigration = 0920;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					7522362B1AE41FB9002526C9 = {
 						CreatedOnToolsVersion = 6.4;
 						LastSwiftMigration = 0830;
 						TestTargetID = 7522361B1AE41FB8002526C9;
+					};
+					7530BD3F2013AAEC00148DBC = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -189,6 +277,7 @@
 			targets = (
 				7522361B1AE41FB8002526C9 /* RadioTower */,
 				7522362B1AE41FB9002526C9 /* RadioTowerTests */,
+				7530BD3F2013AAEC00148DBC /* LauncherApplication */,
 			);
 		};
 /* End PBXProject section */
@@ -209,6 +298,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7530BD3E2013AAEC00148DBC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7530BD472013AAEC00148DBC /* Assets.xcassets in Resources */,
+				7530BD4A2013AAEC00148DBC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +345,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7530BD3C2013AAEC00148DBC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7530BD432013AAEC00148DBC /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -264,6 +370,14 @@
 				752236261AE41FB8002526C9 /* Base */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		7530BD482013AAEC00148DBC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7530BD492013AAEC00148DBC /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -375,6 +489,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RadioTower/RadioTower.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -394,6 +509,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RadioTower/RadioTower.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -447,6 +563,51 @@
 			};
 			name = Release;
 		};
+		7530BD4D2013AAEC00148DBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = LauncherApplication/LauncherApplication.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = LauncherApplication/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.portaller.RadioTower.LauncherApplication;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		7530BD4E2013AAEC00148DBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = LauncherApplication/LauncherApplication.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = LauncherApplication/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.portaller.RadioTower.LauncherApplication;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -473,6 +634,15 @@
 			buildConfigurations = (
 				7522363A1AE41FB9002526C9 /* Debug */,
 				7522363B1AE41FB9002526C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7530BD4F2013AAEC00148DBC /* Build configuration list for PBXNativeTarget "LauncherApplication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7530BD4D2013AAEC00148DBC /* Debug */,
+				7530BD4E2013AAEC00148DBC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

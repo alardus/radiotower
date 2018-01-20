@@ -8,6 +8,11 @@
 
 import Cocoa
 import Foundation
+import ServiceManagement
+
+extension Notification.Name {
+    static let killLauncher = Notification.Name("killLauncher")
+}
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -65,6 +70,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        
+        let launcherAppId = "com.portaller.RadioTower.LauncherApplication"
+        let runningApps = NSWorkspace.shared.runningApplications
+        let isRunning = !runningApps.filter { $0.bundleIdentifier == launcherAppId }.isEmpty
+        
+        SMLoginItemSetEnabled(launcherAppId as CFString, true)
+        
+        if isRunning {
+            DistributedNotificationCenter.default().post(name: .killLauncher,
+                                                         object: Bundle.main.bundleIdentifier!)
+        }
+        
         statusItem.menu = statusMenu
         
         
