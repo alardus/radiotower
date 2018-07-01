@@ -163,7 +163,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         
         // Define "right" settings
-        let rightSettings = ["107.170.15.247", "77.88.8.8"]
+        let rightSettings = ["107.170.15.247"]
         
         
         // Compare current settings to "right" and set menu items
@@ -218,7 +218,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         else {
             sender.state = NSControl.StateValue.on
-            eth.arguments = ["-setdnsservers", "USB Ethernet", "107.170.15.247", "77.88.8.8"]
+            eth.arguments = ["-setdnsservers", "USB Ethernet", "107.170.15.247"]
             let iconOn = NSImage(named: NSImage.Name(rawValue: "statusIcon"))
             statusItem.image = iconOn
         }
@@ -240,7 +240,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         else {
             sender.state = NSControl.StateValue.on
-            wf.arguments = ["-setdnsservers", "Wi-Fi", "107.170.15.247", "77.88.8.8"]
+            wf.arguments = ["-setdnsservers", "Wi-Fi", "107.170.15.247"]
             let iconOn = NSImage(named: NSImage.Name(rawValue: "statusIcon"))
             statusItem.image = iconOn
             
