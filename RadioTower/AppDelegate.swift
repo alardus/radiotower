@@ -115,8 +115,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     override func awakeFromNib() {
         
         // Set icons and enable support for dark theme
-        let iconOn = NSImage(named: NSImage.Name(rawValue: "statusIcon"))
-        let iconOff = NSImage(named: NSImage.Name(rawValue: "statusIconOff"))
+        let iconOn = NSImage(named: "statusIcon")
+        let iconOff = NSImage(named: "statusIconOff")
         iconOn!.isTemplate = true
         iconOff!.isTemplate = true
         
@@ -213,13 +213,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if(sender.state == NSControl.StateValue.on) {
             sender.state = NSControl.StateValue.off
             eth.arguments = ["-setdnsservers", "USB Ethernet", "Empty"]
-            let iconOff = NSImage(named: NSImage.Name(rawValue: "statusIconOff"))
+            let iconOff = NSImage(named: "statusIconOff")
             statusItem.image = iconOff
         }
         else {
             sender.state = NSControl.StateValue.on
             eth.arguments = ["-setdnsservers", "USB Ethernet", "107.170.15.247"]
-            let iconOn = NSImage(named: NSImage.Name(rawValue: "statusIcon"))
+            let iconOn = NSImage(named: "statusIcon")
             statusItem.image = iconOn
         }
         
@@ -235,13 +235,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if(sender.state == NSControl.StateValue.on) {
             sender.state = NSControl.StateValue.off
             wf.arguments = ["-setdnsservers", "Wi-Fi", "Empty"]
-            let iconOff = NSImage(named: NSImage.Name(rawValue: "statusIconOff"))
+            let iconOff = NSImage(named: "statusIconOff")
             statusItem.image = iconOff
         }
         else {
             sender.state = NSControl.StateValue.on
             wf.arguments = ["-setdnsservers", "Wi-Fi", "107.170.15.247"]
-            let iconOn = NSImage(named: NSImage.Name(rawValue: "statusIcon"))
+            let iconOn = NSImage(named: "statusIcon")
             statusItem.image = iconOn
             
         }
